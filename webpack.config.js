@@ -9,6 +9,9 @@ module.exports = {
 		filename: 'app.js',
 		path: path.join(__dirname, 'public/')
 	},
+
+	performance: { hints: false },
+
 	module: {
 		loaders: [
 			{
@@ -41,7 +44,7 @@ module.exports = {
 	},
 
 	plugins: [
-		//new webpack.optimize.UglifyJsPlugin,
+		new webpack.optimize.UglifyJsPlugin,
 		new Html({
 			filename: 'pages/index.html',
 			template: './resources/views/index.html'
